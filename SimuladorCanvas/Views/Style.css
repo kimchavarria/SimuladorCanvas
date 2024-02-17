@@ -1,0 +1,38 @@
+﻿/* Estilos para el body */
+body {
+    background-color: #FFFFFF; /* Color de fondo del cuerpo de la página */
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    margin-top: 20px; /* Margen superior del contenedor */
+}
+
+/* Estilos para el contenedor del lado izquierdo */
+.left-container {
+    background-color: #d0abee; /* Color de fondo */
+    padding: 20px; /* Espacio interior */
+}
+
+/* Estilos para los botones en el lado izquierdo */
+.perfil-btn,
+.cursos-btn,
+.grupos-btn,
+.calificaciones-btn,
+.signout-btn {
+    margin-bottom: 10px; /* Margen inferior  */
+    background-color: #FFFFFF; /* Color de fondo */
+}
+
+/* Estilos para la información del curso en el lado derecho */
+.bienvenida-info {
+    background-color: #FFFFFF; /* Color de fondo */
+    padding: 20px; /* Espacio interior de la información  */
+    border-radius: 5px; /* Borde redondeado  */
+}
+
+/* Estilos para la scrollbox */
+.scroll-box {
+    max-height: 300px; /* Altura máxima */
+    overflow-y: auto; /* poner el desplazamiento vertical */
+}
