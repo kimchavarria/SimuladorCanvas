@@ -4,25 +4,33 @@
     <title>Login</title>
 </head>
 <body>
+    <!-- header que indica "Login" -->
     <h2>Login</h2>
+    <!-- Formulario para enviar datos al servidor.
+        El atributo 'action' especifica la URL a la que se enviarán los datos y
+        'method' especifica el método HTTP utilizado (en este caso, POST) -->
     <form action="http://localhost:59901/api/login" method="post">
-        <!-- Replace "/api/login" with your actual API endpoint -->
         <div>
-            <label for="username">Username:</label>
+            <label for="username">Username:</label> <!-- Etiqueta para el campo de nombre de usuario -->
             <input type="text" id="username" name="username" required>
+            <!-- Campo de entrada de texto para el nombre de usuario.
+                required indica que este campo es obligatorio -->
         </div>
         <div>
-            <label for="password">Password:</label>
+            <label for="password">Password:</label> <!-- Etiqueta para el campo de contraseña -->
             <input type="password" id="password" name="password" required>
+            <!-- Campo de entrada de contraseña.
+                En el atributo 'type' se pone  'password' para ocultar el texto ingresado -->
         </div>
         <div>
-            <label for="userType">User Type:</label>
-            <input type="text" id="userType" name="userType" required>
+            <label for="userType">User Type:</label> <!-- Etiqueta para el tipo de usuario -->
+            <input type="text" id="userType" name="userType" required> <!-- Campo de entrada de texto para el tipo de usuario -->
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">Login</button> <!-- Botón para envío del formulario -->
     </form>
 
-    <script src="Login.js"></script>
+    <div id="alert" style="display: none; color: red;">Login failed. Please check your credentials.</div> <!--Login failed alerta-->
+
+    <script src="Login.js"></script> <!-- archivo JavaScript llamado "Login.js" donde se hace el fetch al web api y db -->
 </body>
 </html>
-

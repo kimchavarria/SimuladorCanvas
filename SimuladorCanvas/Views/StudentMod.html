@@ -4,29 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modulo Estudiante</title>
-    <!-- Agregar enlace al archivo CSS -->
     <link rel="stylesheet" href="Style.css">
-    <!-- Agregar enlaces a los archivos CSS de Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
 
     <div class="container">
         <div class="row">
             <div class="col-md-3 left-container">
-                <!--img-fluid so it can adjust to the size of the screen-->
+                <!-- imagen con clase "img-fluid" para que se ajuste al tamaño de la pantalla -->
                 <img src="ulacitlogo.png" class="img-fluid mb-5" alt="ULACIT LOGO">
                 <!-- Botones del lado izquierdo -->
                 <div class="perfil-btn">
+                    <!-- Botón que lleva a la página de perfil -->
                     <a href="Perfil.html" type="button" class="btn btn-secondary btn-block">Perfil</a>
                 </div>
                 <div class="cursos-btn">
+                    <!-- Botón que lleva a la página de cursos -->
                     <a href="Cursos.html" type="button" class="btn btn-secondary btn-block">Cursos</a>
                 </div>
                 <div class="signout-btn">
+                    <!-- Botón para signout, ejecuta la función logout() cuando se hace click -->
                     <button type="button" class="btn btn-dark btn-block" onclick="logout()">Sign Out</button>
                 </div>
             </div>
+
             <div class="col-md-9">
                 <!-- Información de bienvenida al lado derecho -->
                 <div class="bienvenida-info">
@@ -43,7 +46,7 @@
         </div>
     </div>
 
-    <!-- Footer con mensaje de "All rights reserved" -->
+    <!-- Footer -->
     <footer class="footer mt-5">
         <div class="container text-center">
             <p>All rights reserved &copy; 2024</p>
@@ -51,21 +54,21 @@
     </footer>
 
     <script>
-
+        // Función para signout
         function logout() {
             if (confirm("Are you sure you want to log out?")) {
-                // Redirect the user to the login page
+                // Redirige al estudiante a la página de inicio de sesión
                 window.location.href = 'login.html';
             } else {
-                // Do nothing if the user cancels the logout
+                // No hace nada si el usuario cancela el signout en la alerta
             }
         }
-        
-</script>
+    </script>
 
-    <!-- Agregar el enlace al archivo JavaScript de Bootstrap -->
+    <!-- enlaces de los archivos JavaScript de Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
