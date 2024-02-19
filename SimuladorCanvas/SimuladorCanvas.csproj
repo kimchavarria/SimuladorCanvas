@@ -220,6 +220,8 @@
     <Content Include="SQL Server\Create Tables.sql" />
     <Content Include="SQL Server\Inserts.sql" />
     <Content Include="SQL Server\Procedures.sql" />
+    <Content Include="Views\Calificaciones.html" />
+    <Content Include="Views\CursosStyle.css" />
     <Content Include="Views\FacultyMod.html" />
     <Content Include="Views\Cursos.html" />
     <Content Include="Views\imaula.png" />
