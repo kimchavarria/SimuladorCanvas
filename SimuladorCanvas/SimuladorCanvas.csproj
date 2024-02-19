@@ -227,6 +227,7 @@
     <Content Include="Views\Login.js" />
     <Content Include="Views\Perfil.html" />
     <Content Include="Views\StudentMod.html" />
+    <Content Include="Views\StudentStyle.css" />
     <Content Include="Views\Style.css" />
     <Content Include="Views\ulacitlogo.png" />
     <Content Include="Web.config" />

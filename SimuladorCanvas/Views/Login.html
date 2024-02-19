@@ -1,33 +1,33 @@
-﻿<html lang="es">
+﻿<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iniciar sesión</title>
-  <link rel="stylesheet" href="Style.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-    <div class="login-container">
-      <form class="login-form" action="http://localhost:59901/api/login" method="POST">
-        <div class="form-group">
-          <label for="username" class="form-label mt-4">Nombre de Usuario:</label>
-          <input type="text" class="form-control" id="username" name="username" required>
+    <!-- Formulario para enviar datos al servidor.
+        El atributo 'action' especifica la URL a la que se enviarán los datos y
+        'method' especifica el método HTTP utilizado (en este caso, POST) -->
+    <form action="http://localhost:59901/api/login" method="post">
+        <div class="login-container">
+            <div class="form-group">
+                <label for="username" class="form-label mt-4">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label mt-4">Password:</label> <!-- Etiqueta para el campo de contraseña -->
+                <input type="password" class="form-control" id="password" name="password" required>
+                <!-- Campo de entrada de contraseña.
+            En el atributo 'type' se pone  'password' para ocultar el texto ingresado -->
+            </div>
+            <div class="form-group">
+                <label for="userType">User Type:</label> <!-- Etiqueta para el tipo de usuario -->
+                <input type="text" id="userType" name="userType" required> <!-- Campo de entrada de texto para el tipo de usuario -->
+            </div>
+            <button type="submit" class="btn btn-primary mt-4">Login</button> <!-- Botón para envío del formulario -->
         </div>
-        <div class="form-group">
-          <label for="password" class="form-label mt-4">Contraseña:</label>
-          <input type="password" class="form-control" id="password" name="password" required>
-        </div>
-        <div class="form-group">
-          <label for="userType" class="form-label mt-4">Tipo de Usuario:</label>
-          <select class="form-control" id="userType" name="userType" required>
-            <option value="">Seleccione...</option>
-            <option value="estudiante">Estudiante</option>
-            <option value="profesor">Profesor</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary mt-4">Iniciar Sesión</button>
-      </form>
-    </div>
-    <div id="alert" style="display: none; color: red;">Inicio de sesión fallido. Por favor, comprueba tus credenciales.</div>
-    <script src="Login.js"></script>
+    </form>
+
+    <script src="Login.js"></script> <!-- archivo JavaScript llamado "Login.js" donde se hace el fetch al web api y db -->
 </body>
 </html>
