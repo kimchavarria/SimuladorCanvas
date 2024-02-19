@@ -33,7 +33,7 @@ body {
 
 /* Estilos para la scrollbox */
 .scroll-box {
-    max-height: 300px; /* Altura máxima */
+    max-height: 500px; /* Altura máxima */
     overflow-y: auto; /* poner el desplazamiento vertical */
 }
 

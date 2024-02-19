@@ -6,6 +6,7 @@
     <title>Modulo Estudiante</title>
     <link rel="stylesheet" href="StudentStyle.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
@@ -18,15 +19,24 @@
                 <!-- Botones del lado izquierdo -->
                 <div class="perfil-btn">
                     <!-- Botón que lleva a la página de perfil -->
-                    <a href="Perfil.html" type="button" class="btn btn-secondary btn-block">Perfil</a>
+                    <a href="Perfil.html" type="button" class="btn btn-secondary btn-block">
+                        <i class="fa fa-user"></i>
+                        Perfil
+                    </a>
                 </div>
                 <div class="cursos-btn">
                     <!-- Botón que lleva a la página de cursos -->
-                    <a href="Cursos.html" type="button" class="btn btn-secondary btn-block">Cursos</a>
+                    <a href="Cursos.html" type="button" class="btn btn-secondary btn-block">
+                        <i class="fas fa-book"></i>
+                        Cursos
+                    </a>
                 </div>
                 <div class="signout-btn">
                     <!-- Botón para signout, ejecuta la función logout() cuando se hace click -->
-                    <button type="button" class="btn btn-dark btn-block" onclick="logout()">Sign Out</button>
+                    <button type="button" class="btn btn-dark btn-block" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Sign Out
+                    </button>
                 </div>
             </div>
 
