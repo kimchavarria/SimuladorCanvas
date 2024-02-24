@@ -22,8 +22,8 @@ document.querySelector('form[action="http://localhost:59901/api/login"]').addEve
                 // Si la respuesta es exitosa, devuelve los datos de respuesta como JSON
                 return response.json();
             } else {
-                // Si la respuesta no es exitosa por un problema en el network da este error
-                throw new Error('Network response was not ok');
+                // Si la respuesta no es exitosa por un problema da este error
+                throw new Error('Response was not ok');
             }
         })
         .then(data => {

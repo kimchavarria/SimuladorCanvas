@@ -18,7 +18,7 @@ namespace SimuladorCanvas.Data
                 //Creación de comando SQL para llamar a un procedimiento en la bd llamado "UserLogin"
                 using (SqlCommand command = new SqlCommand("UserLogin", oConexion))
                 {
-                    //especifica el tipo de comando como un procedimiento almacenado
+                    //especifica el tipo de comando como un procedimiento 
                     command.CommandType = CommandType.StoredProcedure; 
 
                     // Parámetros de entrada del procedimiento almacenado
