@@ -3,6 +3,19 @@ document.querySelector('form[action="http://localhost:59901/api/login"]').addEve
     // Previene el comportamiento del form, enviar la solicitud al servidor y recargar la página
     event.preventDefault();
 
+    // Obtiene el valor del correo electrónico
+    const email = document.getElementById('username').value;
+
+    // Expresión regular para validar los dominios permitidos
+    const allowedDomains = /@(ulacit\.ed\.cr|ulacit\.ac\.cr)$/;
+
+    // Verifica si el correo electrónico coincide con los dominios permitidos
+    if (!allowedDomains.test(email)) {
+        // Si el correo electrónico no coincide, muestra la alerta y detiene la ejecución
+        document.getElementById('alert').style.display = 'block';
+        return;
+    }
+
     // Realiza un fetch a la URL de la API de inicio de sesión con el método POST
     fetch('http://localhost:59901/api/login', {
         method: 'POST',
@@ -11,7 +24,7 @@ document.querySelector('form[action="http://localhost:59901/api/login"]').addEve
         },
         // Convierte los datos del form en un objeto JSON y los envía 
         body: JSON.stringify({
-            username: document.getElementById('username').value, // Obtiene el valor nombre de usuario
+            username: email, // Obtiene el valor nombre de usuario
             password: document.getElementById('password').value, // Obtiene el valor de contraseña
             userType: document.getElementById('userType').value // Obtiene el valor tipo de usuario
         })
