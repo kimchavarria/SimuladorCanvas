@@ -33,7 +33,7 @@ body {
 
 /* Estilos para la scrollbox */
 .scroll-box {
-    max-height: 500px; /* Altura máxima */
+    max-height: 600px; /* Altura máxima */
     overflow-y: auto; /* poner el desplazamiento vertical */
 }
 
@@ -49,10 +49,11 @@ body {
     margin-bottom: 10px;
 }
 
-    .materia-card h3 {
-        margin: 0 0 5px;
+.materia-card h3 {
+    margin: 0 0 5px;
     }
 
     .materia-card p {
         margin: 0;
     }
+

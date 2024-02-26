@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net; 
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Security;
 
 namespace SimuladorCanvas.Controllers
 {
@@ -38,6 +39,7 @@ namespace SimuladorCanvas.Controllers
 
             if (success) // Verifica si el login fue exitoso
             {
+                FormsAuthentication.SetAuthCookie(model.Username, false); // Issue authentication cookie
                 return Ok(new { message = "Login successful", userType = model.UserType }); // Devuelve un Ok con un objeto anónimo que contiene un mensaje de éxito y el tipo de usuario
             }
             else

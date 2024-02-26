@@ -1,6 +1,6 @@
 ﻿// Selecciona el formulario con el atributo 'action' igual a la URL de la API de inicio de sesión y agrega un evento 'submit'
 document.querySelector('form[action="http://localhost:59901/api/login"]').addEventListener('submit', function (event) {
-    // Previene el comportamiento del form, enviar la solicitud al servidor y recargar la página
+    // prevents el comportamiento del form, envia la solicitud al servidor y reloads la página
     event.preventDefault();
 
     // Obtiene el valor del correo electrónico
@@ -12,7 +12,7 @@ document.querySelector('form[action="http://localhost:59901/api/login"]').addEve
     // Verifica si el correo electrónico coincide con los dominios permitidos
     if (!allowedDomains.test(email)) {
         // Si el correo electrónico no coincide, muestra la alerta y detiene la ejecución
-        document.getElementById('username').value = ''; // Limpiar el campo de username
+        document.getElementById('password').value = ''; // Limpiar el campo de password
         document.getElementById('alert').style.display = 'block';
         return;
     }
@@ -53,8 +53,7 @@ document.querySelector('form[action="http://localhost:59901/api/login"]').addEve
             } else {
                 // Si el mensaje de la respuesta no es 'Login Succesful', muestra un mensaje de error en la consola
                 console.error('Login failed');
-                document.getElementById('password').value = ''; // Limpiar el campo de contraseña
-                document.getElementById('alert1').style.display = 'block'; // Muestra la alerta
+                
             }
         })
         .catch(error => {
