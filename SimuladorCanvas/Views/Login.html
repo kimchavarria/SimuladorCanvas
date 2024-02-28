@@ -1,8 +1,11 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="Style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Formulario para enviar datos al servidor.
@@ -14,23 +17,36 @@
             <div class="login-form">
                 <!-- Agregamos esta clase para aplicar estilos al formulario -->
                 <div class="form-group">
-                    <label for="username" class="form-label mt-4">Username:</label>
+                    <div id="alert" class="alert alert-danger mt-4" style="display: none;">
+                        Correo electrónico invalido. <br>Por favor, inténtelo de nuevo.
+                    </div>
+                    <div id="alert1" class="alert alert-danger mt-4" style="display: none;">
+                        Contraseña incorrecta. 
+                    </div>
+                    <label for="username" class="form-label">Username:</label>
                     <input type="text" class="form-control" id="username" name="username" required>
                 </div>
                 <div class="form-group">
-                    <label for="password" class="form-label mt-4">Password:</label>
+                    <label for="password" class="form-label">Password:</label>
                     <input type="password" class="form-control" id="password" name="password" required>
                 </div>
                 <div class="form-group">
-                    <label for="userType">User Type:</label>
-                    <input type="text" id="userType" name="userType" required>
+                    <label for="userType" class="form-label">User Type:</label>
+                    <select class="form-control" id="userType" name="userType" required>
+                        <option value="student">Estudiante </option>
+                        <option value="faculty">Facultad</option>
+                    </select>
                 </div>
                 <button type="submit" class="btn-primary mt-4">Iniciar sesión</button>
-                <button type="submit" class="btn-info mt-4">Necesito ayuda</button>
+                <button type="button" class="btn-info mt-4">Necesito ayuda</button>
             </div>
         </div>
     </form>
 
     <script src="Login.js"></script> <!-- archivo JavaScript llamado "Login.js" donde se hace el fetch al web api y db -->
+    <!-- links de los archivos JavaScript de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

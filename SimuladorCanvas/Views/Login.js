@@ -1,7 +1,21 @@
 ﻿// Selecciona el formulario con el atributo 'action' igual a la URL de la API de inicio de sesión y agrega un evento 'submit'
 document.querySelector('form[action="http://localhost:59901/api/login"]').addEventListener('submit', function (event) {
-    // Previene el comportamiento del form, enviar la solicitud al servidor y recargar la página
+    // prevents el comportamiento del form, envia la solicitud al servidor y reloads la página
     event.preventDefault();
+
+    // Obtiene el valor del correo electrónico
+    const email = document.getElementById('username').value;
+
+    // Expresión regular para validar los dominios permitidos
+    const allowedDomains = /@(ulacit\.ed\.cr|ulacit\.ac\.cr)$/;
+
+    // Verifica si el correo electrónico coincide con los dominios permitidos
+    if (!allowedDomains.test(email)) {
+        // Si el correo electrónico no coincide, muestra la alerta y detiene la ejecución
+        document.getElementById('password').value = ''; // Limpiar el campo de password
+        document.getElementById('alert').style.display = 'block';
+        return;
+    }
 
     // Realiza un fetch a la URL de la API de inicio de sesión con el método POST
     fetch('http://localhost:59901/api/login', {
@@ -11,7 +25,7 @@ document.querySelector('form[action="http://localhost:59901/api/login"]').addEve
         },
         // Convierte los datos del form en un objeto JSON y los envía 
         body: JSON.stringify({
-            username: document.getElementById('username').value, // Obtiene el valor nombre de usuario
+            username: email, // Obtiene el valor nombre de usuario
             password: document.getElementById('password').value, // Obtiene el valor de contraseña
             userType: document.getElementById('userType').value // Obtiene el valor tipo de usuario
         })
@@ -22,8 +36,8 @@ document.querySelector('form[action="http://localhost:59901/api/login"]').addEve
                 // Si la respuesta es exitosa, devuelve los datos de respuesta como JSON
                 return response.json();
             } else {
-                // Si la respuesta no es exitosa por un problema en el network da este error
-                throw new Error('Network response was not ok');
+                // Si la respuesta no es exitosa, lanza un error con el código de estado de la respuesta
+                throw new Error(response.status);
             }
         })
         .then(data => {
@@ -37,13 +51,15 @@ document.querySelector('form[action="http://localhost:59901/api/login"]').addEve
                     window.location.href = 'FacultyMod.html';
                 }
             } else {
-                // Si el mensaje de la respuesta nos es 'Login Succesful', muestra un mensaje de error en la consola
+                // Si el mensaje de la respuesta no es 'Login Succesful', muestra un mensaje de error en la consola
                 console.error('Login failed');
-                document.getElementById('alert').style.display = 'block'; // Muestra la alerta
+                
             }
         })
         .catch(error => {
-            // si hay cualquier error que ocurra durante el proceso de solicitud lo muestra en la consola
-            console.error('Error:', error);
+            // Maneja los errores relacionados con el proceso de inicio de sesión
+            console.error('Login error:', error);
+            document.getElementById('password').value = ''; // Limpiar el campo de contraseña
+            document.getElementById('alert1').style.display = 'block'; // Muestra la alerta
         });
 });
