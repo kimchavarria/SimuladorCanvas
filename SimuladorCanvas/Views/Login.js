@@ -48,7 +48,7 @@ document.querySelector('form[action="http://localhost:59901/api/login"]').addEve
                     window.location.href = 'StudentMod.html';
                 } else if (data.userType === 'faculty') { // Si el tipo de usuario es 'faculty'
                     // Redirige a la página FacultyMod.html
-                    window.location.href = 'FacultyMod.html';
+                    window.location.href = 'ProfesorMod.html';
                 }
             } else {
                 // Si el mensaje de la respuesta no es 'Login Succesful', muestra un mensaje de error en la consola

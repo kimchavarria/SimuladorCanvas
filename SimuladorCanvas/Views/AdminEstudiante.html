@@ -1,0 +1,23 @@
+﻿﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Estudiante</title>
+    <link rel="stylesheet" href="">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <h2>Registro de Estudiantes en Curso</h2>
+
+    <form action="/api/Faculty/RegistrarEstudianteACurso" method="post">
+        <label for="studentId">ID del Estudiante:</label><br>
+        <input type="text" id="studentId" name="studentId" value="1"><br>
+        <label for="courseId">ID del Curso:</label><br>
+        <input type="text" id="courseId" name="courseId" value="1"><br><br>
+        <input type="submit" value="Registrar Estudiante en Curso">
+    </form>
+
+</body>
+</html>
+

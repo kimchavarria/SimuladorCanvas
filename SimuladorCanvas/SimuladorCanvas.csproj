@@ -220,32 +220,40 @@
     <Content Include="SQL Server\Create Tables.sql" />
     <Content Include="SQL Server\Inserts.sql" />
     <Content Include="SQL Server\Procedures.sql" />
+    <Content Include="Views\AdminEstudiante.html" />
     <Content Include="Views\Calificaciones.html" />
-    <Content Include="Views\CursosStyle.css" />
-    <Content Include="Views\FacultyMod.html" />
+    <Content Include="Views\Styles\CursosStyle.css" />
     <Content Include="Views\Cursos.html" />
-    <Content Include="Views\imaula.png" />
+    <Content Include="Views\Images\imaula.png" />
     <Content Include="Views\Login.html" />
     <Content Include="Views\Login.js" />
     <Content Include="Views\Perfil.html" />
+    <Content Include="Views\Styles\PerfilProfesorStyle.css" />
+    <Content Include="Views\Styles\PerfilStyle.css" />
+    <Content Include="Views\ProfesorMod.html" />
+    <Content Include="Views\ProfesorPerfil.html" />
+    <Content Include="Views\Styles\ProfesorStyle.css" />
     <Content Include="Views\StudentMod.html" />
-    <Content Include="Views\StudentStyle.css" />
-    <Content Include="Views\Style.css" />
-    <Content Include="Views\ulacitlogo.png" />
+    <Content Include="Views\Styles\StudentStyle.css" />
+    <Content Include="Views\Styles\Style.css" />
+    <Content Include="Views\Images\ulacitlogo.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\FacultyController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Data\Conexion.cs" />
+    <Compile Include="Data\FacultyData.cs" />
     <Compile Include="Data\LoginData.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Faculty.cs" />
-    <Compile Include="Models\Grade.cs" />
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Registro.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

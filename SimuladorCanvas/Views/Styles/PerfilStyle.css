@@ -3,11 +3,13 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+
 }
 
 .left-container {
-    background-color: #d0abee;
+    background-color: #BF3131;
     padding: 20px;
+    margin-top: 20px; /* Margen superior del contenedor */
 }
 
 .perfil-btn, .cursos-btn, .grupos-btn, .calificaciones-btn, .signout-btn {
@@ -30,9 +32,11 @@ h1, h2 {
 p {
     color: #666;
     line-height: 1.6;
+    margin-top: 20px; /* Margen superior del contenedor */
 }
 
 strong {
     color: #333;
+    margin-top: 20px; /* Margen superior del contenedor */
 }
 

@@ -15,5 +15,6 @@ namespace SimuladorCanvas.Models
         public int credits {  get; set; }
         public DateTime initialDate { get; set; }
         public DateTime finalDate { get; set; }
+        public int MaxStudents {  get; set; }
     }
 }
