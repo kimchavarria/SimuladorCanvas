@@ -45,17 +45,18 @@ CREATE TABLE COURSE (
     finalDate DATE NOT NULL,
     FOREIGN KEY (faculty_id) REFERENCES FACULTY(faculty_id)
 );
+--adding a column that will set a limit to students that can be register 
+ALTER TABLE COURSE ADD maxStudents INT NOT NULL; 
 
---TABLA CALIFICACION
-CREATE TABLE GRADE (
-    grade_id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
-    faculty_id INT NOT NULL,
+--TABLE REGISTRO 
+CREATE TABLE REGISTRO (
+    registro_id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
     student_id INT NOT NULL,
     course_id INT NOT NULL,
-    grade INT NOT NULL,
-    date DATETIME DEFAULT getdate() NOT NULL,
-    status BIT NOT NULL,
-    FOREIGN KEY (faculty_id) REFERENCES FACULTY(faculty_id),
+    student_name VARCHAR(100), 
+    student_email VARCHAR(100), 
     FOREIGN KEY (student_id) REFERENCES STUDENT(student_id),
     FOREIGN KEY (course_id) REFERENCES COURSE(course_id)
 );
+--AGREGAR ESTE CONSTRAINT PARA QUE NO SE PUEDA REPETIR ESTUDIANTE EN UN CURSO
+ALTER TABLE REGISTRO ADD CONSTRAINT UC_REGISTRO UNIQUE (student_id, course_id);

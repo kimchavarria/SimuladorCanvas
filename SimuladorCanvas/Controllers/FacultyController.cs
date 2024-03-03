@@ -1,33 +1,36 @@
 ﻿using SimuladorCanvas.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+using SimuladorCanvas.Models;
 using System.Web.Http;
 
 namespace SimuladorCanvas.Controllers
 {
     public class FacultyController : ApiController
     {
-        [HttpPost]
-        [Route("api/RegistrarEstudianteACurso")]
-        public IHttpActionResult RegistrarEstudianteACurso(int studentId, int courseId)
-        {
-            try
-            {
-                // Instanciar la clase FacultyData
-                FacultyData facultyData = new FacultyData();
-                // Llamar al método RegistrarEstudianteACurso
-                facultyData.RegistrarEstudianteACurso(studentId, courseId);
+        private readonly FacultyData facultyData;
 
-                // Si se ejecuta correctamente, devolver un mensaje de éxito
-                return Ok("El estudiante ha sido registrado en el curso.");
-            }
-            catch (Exception ex)
+        public FacultyController()
+        {
+            this.facultyData = new FacultyData();
+        }
+
+        [HttpPost]
+        [Route("api/faculty/register")]
+        public IHttpActionResult RegisterStudentToCourse(Registro request)
+        {
+            if (!ModelState.IsValid)
             {
-                // En caso de error, devolver un mensaje de error
-                return InternalServerError(ex);
+                return BadRequest(ModelState);
+            }
+
+            bool success = facultyData.RegisterStudentToCourse(request.student_id, request.course_id);
+
+            if (success)
+            {
+                return Ok(new { message = "Student registered successfully to the course" });
+            }
+            else
+            {
+                return BadRequest("Failed to register student to the course");
             }
         }
     }

@@ -1,32 +1,27 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
+using System.Web;
 
 namespace SimuladorCanvas.Data
 {
     public class FacultyData
     {
-        public void RegistrarEstudianteACurso(int studentId, int courseId)
+        public bool RegisterStudentToCourse(int studentId, int courseId)
         {
-            // Obtiene la cadena de conexión desde la clase de conexión
-            string connectionString = Conexion.dbConexion;
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(Conexion.dbConexion))
             {
-                connection.Open();
-
-                SqlCommand command = new SqlCommand("RegistrarEstudianteACurso", connection);
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@student_id", studentId);
-                command.Parameters.AddWithValue("@course_id", courseId);
-
-                try
+                using (SqlCommand command = new SqlCommand("RegistrarEstudianteACurso", connection))
                 {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Add("@student_id", SqlDbType.Int).Value = studentId;
+                    command.Parameters.Add("@course_id", SqlDbType.Int).Value = courseId;
+
+                    connection.Open();
                     command.ExecuteNonQuery();
-                    Console.WriteLine("El estudiante ha sido registrado en el curso.");
-                }
-                catch (SqlException ex)
-                {
-                    Console.WriteLine("Error al registrar al estudiante: " + ex.Message);
+
+                    return true; // Assuming the stored procedure handles successful registration
                 }
             }
         }
