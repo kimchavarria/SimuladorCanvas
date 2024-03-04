@@ -49,6 +49,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.PDF, Version=24.2.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.PDF.24.2.0\lib\net4.0\Aspose.PDF.dll</HintPath>
+    </Reference>
     <Reference Include="Azure.Core, Version=1.6.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
       <HintPath>..\packages\Azure.Core.1.6.0\lib\net461\Azure.Core.dll</HintPath>
     </Reference>
@@ -220,16 +223,18 @@
     <Content Include="SQL Server\Create Tables.sql" />
     <Content Include="SQL Server\Inserts.sql" />
     <Content Include="SQL Server\Procedures.sql" />
+    <Content Include="Views\AdminEstudiante.js" />
     <Content Include="Views\AdminEstudiantes.html" />
     <Content Include="Views\Calificaciones.html" />
     <Content Include="Views\CursosProfesor.html" />
+    <Content Include="Views\Styles\AdminEstudianteStyle.css" />
+    <Content Include="Views\Styles\CursosProfesorStyle.css" />
     <Content Include="Views\Styles\CursosStyle.css" />
     <Content Include="Views\Cursos.html" />
     <Content Include="Views\Images\imaula.png" />
     <Content Include="Views\Login.html" />
     <Content Include="Views\Login.js" />
     <Content Include="Views\Perfil.html" />
-    <Content Include="Views\Styles\PerfilProfesorStyle.css" />
     <Content Include="Views\Styles\PerfilStyle.css" />
     <Content Include="Views\ProfesorMod.html" />
     <Content Include="Views\ProfesorPerfil.html" />
@@ -244,10 +249,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\FacultyController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegistroController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Data\Conexion.cs" />
     <Compile Include="Data\FacultyData.cs" />
     <Compile Include="Data\LoginData.cs" />
+    <Compile Include="Data\RegistroData.cs" />
+    <Compile Include="Data\StudentData.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

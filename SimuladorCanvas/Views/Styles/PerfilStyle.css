@@ -1,42 +1,23 @@
+/* Estilo para el body */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-
+    background-color: #FFFFFF; /* Color de fondo del cuerpo de la página */
 }
 
+/* Estilo para el contenedor principal */
+.container {
+    margin-top: 20px; /* Margen superior del contenedor */
+}
+
+/* Estilo para el contenedor del lado izquierdo */
 .left-container {
-    background-color: #BF3131;
-    padding: 20px;
-    margin-top: 20px; /* Margen superior del contenedor */
+    background-color: #d0abee; /* Color de fondo */
+    padding: 20px; /* Espacio interior */
 }
 
-.perfil-btn, .cursos-btn, .grupos-btn, .calificaciones-btn, .signout-btn {
-    margin-bottom: 10px;
-    background-color: #FFFFFF;
-}
-
-.section {
-    background-color: #fff;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-h1, h2 {
-    color: #333;
-}
-
-p {
-    color: #666;
-    line-height: 1.6;
-    margin-top: 20px; /* Margen superior del contenedor */
-}
-
-strong {
-    color: #333;
-    margin-top: 20px; /* Margen superior del contenedor */
+/* Estilo para los botones en el lado izquierdo */
+.cursos-btn,
+.signout-btn {
+    margin-bottom: 10px; /* Margen inferior  */
+    background-color: #FFFFFF; /* Color de fondo */
 }
 

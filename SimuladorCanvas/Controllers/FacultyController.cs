@@ -1,5 +1,6 @@
 ﻿using SimuladorCanvas.Data;
 using SimuladorCanvas.Models;
+using System;
 using System.Web.Http;
 
 namespace SimuladorCanvas.Controllers
@@ -22,15 +23,22 @@ namespace SimuladorCanvas.Controllers
                 return BadRequest(ModelState);
             }
 
-            bool success = facultyData.RegisterStudentToCourse(request.student_id, request.course_id);
+            try
+            {
+                bool success = facultyData.RegisterStudentToCourse(request.student_id, request.course_id);
 
-            if (success)
-            {
-                return Ok(new { message = "Student registered successfully to the course" });
+                if (success)
+                {
+                    return Ok(new { message = "Student registered successfully to the course" });
+                }
+                else
+                {
+                    return BadRequest("Failed to register student to the course");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return BadRequest("Failed to register student to the course");
+                return InternalServerError(ex);
             }
         }
     }

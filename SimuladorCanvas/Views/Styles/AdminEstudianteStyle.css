@@ -1,0 +1,107 @@
+﻿.navigation-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #BF3131; /* Adjusted to match the provided navigation bar color */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Align items to the start and end of the navigation bar */
+    align-items: center;
+}
+
+.navigation-bar img {
+    max-height: 100px; /* Adjust the height of the image */
+    margin-top: 25px;
+}
+
+.perfil-btn {
+    margin-left: auto; /* Push the button to the right */
+    margin-right: 10px; /* Adjusted margin for better spacing */
+}
+
+.perfil-btn a {
+    color: #fff; /* Text color for the button */
+    background-color: #808080; /* Background color for the button */
+    border: none; /* Remove button border */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.perfil-btn a:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+    color: #fff; /* Text color on hover */
+}
+
+.signout-btn button {
+    color: #fff; /* Text color for the button */
+    background-color: #343a40; /* Background color for the button */
+    border: none; /* Remove button border */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.signout-btn button:hover {
+    background-color: #23272b; /* Darker background color on hover */
+    color: #fff; /* Text color on hover */
+}
+
+.navigation-bar a {
+    color: #000; /* Adjusted color for better visibility */
+    text-decoration: none;
+    padding: 10px 15px; /* Adjusted padding for better spacing */
+}
+
+.navigation-bar a:hover {
+    background-color: #ddd;
+    color: white;
+}
+
+.navigation-bar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.main-content {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-md-6 {
+    width: 48%; /* Adjusted width for better spacing */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Adjusted margin for better spacing */
+}
+
+.table-container {
+    overflow-y: auto;
+    max-height: 280px;
+    margin: 50px auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+th {
+    background-color: #f2f2f2;
+}

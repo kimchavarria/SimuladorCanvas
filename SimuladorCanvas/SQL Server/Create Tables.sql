@@ -60,3 +60,24 @@ CREATE TABLE REGISTRO (
 );
 --AGREGAR ESTE CONSTRAINT PARA QUE NO SE PUEDA REPETIR ESTUDIANTE EN UN CURSO
 ALTER TABLE REGISTRO ADD CONSTRAINT UC_REGISTRO UNIQUE (student_id, course_id);
+--agrega course name a la tabla 
+ALTER TABLE REGISTRO
+ADD course_name VARCHAR(100),
+CONSTRAINT FK_REGISTRO_COURSE FOREIGN KEY (course_id) REFERENCES COURSE(course_id);
+
+GO
+UPDATE REGISTRO
+SET course_name = c.title
+FROM REGISTRO r
+INNER JOIN COURSE c ON r.course_id = c.course_id;
+
+-- Actualizar valores nulos en course_name
+UPDATE REGISTRO
+SET course_name = c.title
+FROM REGISTRO r
+INNER JOIN COURSE c ON r.course_id = c.course_id
+WHERE r.course_name IS NULL;
+
+-- Agregar restricción de no nulo (NOT NULL) a course_name
+ALTER TABLE REGISTRO
+ALTER COLUMN course_name VARCHAR(100) NOT NULL;

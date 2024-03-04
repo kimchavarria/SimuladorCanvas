@@ -111,3 +111,13 @@ BEGIN
         PRINT 'El estudiante no está registrado en este curso.';
     END;
 END;
+
+
+GO
+--procedure to load student details
+CREATE PROCEDURE GetStudentDetails
+AS
+BEGIN
+    SELECT student_id, CONCAT(firstName, ' ', lastName) AS fullName, email
+    FROM STUDENT;
+END;

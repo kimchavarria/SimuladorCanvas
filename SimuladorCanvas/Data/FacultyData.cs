@@ -9,20 +9,28 @@ namespace SimuladorCanvas.Data
     {
         public bool RegisterStudentToCourse(int studentId, int courseId)
         {
-            using (SqlConnection connection = new SqlConnection(Conexion.dbConexion))
+            try
             {
-                using (SqlCommand command = new SqlCommand("RegistrarEstudianteACurso", connection))
+                using (SqlConnection connection = new SqlConnection(Conexion.dbConexion))
                 {
-                    command.CommandType = CommandType.StoredProcedure;
+                    using (SqlCommand command = new SqlCommand("RegistrarEstudianteACurso", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
 
-                    command.Parameters.Add("@student_id", SqlDbType.Int).Value = studentId;
-                    command.Parameters.Add("@course_id", SqlDbType.Int).Value = courseId;
+                        command.Parameters.Add("@student_id", SqlDbType.Int).Value = studentId;
+                        command.Parameters.Add("@course_id", SqlDbType.Int).Value = courseId;
 
-                    connection.Open();
-                    command.ExecuteNonQuery();
+                        connection.Open();
+                        command.ExecuteNonQuery();
 
-                    return true; // Assuming the stored procedure handles successful registration
+                        return true;
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                // Handle exception appropriately
+                return false;
             }
         }
     }
