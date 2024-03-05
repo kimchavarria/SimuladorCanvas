@@ -1,32 +1,4 @@
-﻿.image-container {
-    position: relative; /* Ensure relative positioning */
-}
-
-.button-container {
-    position: absolute; /* Position the button container */
-    top: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column; /* Align buttons vertically */
-}
-
-.perfil-btn a,
-.signout-btn button {
-    color: #fff;
-    background-color: #808080;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin-bottom: 10px; /* Add some margin between the buttons */
-}
-
-    .perfil-btn a:hover,
-    .signout-btn button:hover {
-        background-color: #0056b3;
-    }
-
-
+﻿
 
 .main-content {
     margin-top: 80px;
