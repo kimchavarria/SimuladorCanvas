@@ -225,6 +225,7 @@
     <Content Include="SQL Server\Procedures.sql" />
     <Content Include="Views\AdminEstudiante.js" />
     <Content Include="Views\AdminEstudiantes.html" />
+    <Content Include="Views\AdministracionEstudiantes.html" />
     <Content Include="Views\Calificaciones.html" />
     <Content Include="Views\CursosProfesor.html" />
     <Content Include="Views\Styles\AdminEstudianteStyle.css" />

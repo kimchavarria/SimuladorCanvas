@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administración de Estudiantes</title>
+    <title>Administraciï¿½n de Estudiantes</title>
     <link rel="stylesheet" href="Styles/AdminEstudianteStyle.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -11,6 +11,12 @@
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-light navigation-bar">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 left-container">
+            <!-- imagen con clase "img-fluid" para que se ajuste al tamaÃ±o de la pantalla -->
+
             <img src="Images/ulacitlogo.png" class="img-fluid mb-5" alt="ULACIT LOGO">
             <div class="perfil-btn">
                 <a href="ProfesorPerfil.html" class="btn btn-primary">
@@ -38,11 +44,11 @@
                                 <th>ID</th>
                                 <th>Primer Nombre</th>
                                 <th>Apellidos</th>
-                                <th>Correo electrónico</th>
+                                <th>Correo electrï¿½nico</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Aquí se listarán los estudiantes -->
+                            <!-- Aquï¿½ se listarï¿½n los estudiantes -->
                         </tbody>
                     </table>
                 </div>
@@ -59,11 +65,11 @@
                                 <th>ID del Curso</th>
                                 <th>Nombre del Curso</th>
                                 <th>Nombre del Estudiante</th>
-                                <th>Correo Electrónico del Estudiante</th>
+                                <th>Correo Electrï¿½nico del Estudiante</th>
                             </tr>
                         </thead>
                         <tbody id="registroTableBody">
-                            <!-- Aquí se mostrarán los datos de la tabla REGISTRO -->
+                            <!-- Aquï¿½ se mostrarï¿½n los datos de la tabla REGISTRO -->
                         </tbody>
                     </table>
                 </div>
@@ -80,14 +86,14 @@
                         <label for="student_id">ID del Estudiante:</label>
                         <input type="number" id="student_id" name="student_id" class="form-control form-control-sm" required min="1" style="max-width: 150px;">
                         <div class="invalid-feedback">
-                            Ingresa un ID válido del estudiante.
+                            Ingresa un ID vï¿½lido del estudiante.
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="course_id">ID del Curso:</label>
                         <input type="number" id="course_id" name="course_id" class="form-control form-control-sm" required min="1" style="max-width: 150px;">
                         <div class="invalid-feedback">
-                            Ingresa un ID válido del curso.
+                            Ingresa un ID vï¿½lido del curso.
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Registrar</button>
@@ -96,10 +102,6 @@
             <div id="responseMessage"></div>
         </div>
     </div>
-
-
-
-
 
     <!-- Footer -->
     <footer class="footer mt-5">
